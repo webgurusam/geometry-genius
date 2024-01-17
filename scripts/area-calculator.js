@@ -38,3 +38,26 @@ function calculateRectangleArea(){
     const rectangleAreaSpan = document.getElementById('rectangle-area');
     rectangleAreaSpan.innerText = area;
 }
+
+// reusable function --> reduce duplicate code
+
+function calculateParallelogramArea(){
+    const base = getInputValue('parallelogram-base');
+    const height = getInputValue('parallelogram-height');
+    const area = base * height;
+    setElementInnerText('parallelogram-area', area);
+}
+
+// reusable get input value field in number
+function getInputValue(fieldId){
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const inputValue = parseFloat(inputValueText);
+    return inputValue;
+}
+
+// reusable set span, div, p etc text
+function setElementInnerText(elementId, area){
+    const element = document.getElementById(elementId);
+    element.innerText = area;
+}
